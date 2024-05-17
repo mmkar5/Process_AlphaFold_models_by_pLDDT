@@ -60,8 +60,8 @@ def main():
                 temp = " ".join(l if len(l) >= min else " " for l in temp.split())
                 residues[chain_id] = ",".join(temp.split())
                 temp = " ".join(
-                    pos if float(plddt) <= 50 else ""
-                    for pos, plddt in zip(value["pos"], value["plddt"])
+                    pos if float(score) <= plddt else ""
+                    for pos, score in zip(value["pos"], value["plddt"])
                 )
                 temp = ",".join(temp.split())
                 positions[chain_id] = temp
