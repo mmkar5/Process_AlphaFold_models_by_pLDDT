@@ -26,7 +26,7 @@ def main():
 
     for filename in filenames:
         chains = {}
-        name = filename.split("\\")[-1].split(".cif")[0]
+        name = os.path.basename(filename).split('.cif')[0].upper()
         with open(filename, "r") as file:
             for line in file:
                 if line.startswith("ATOM"):
